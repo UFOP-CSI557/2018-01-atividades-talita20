@@ -90,8 +90,8 @@ public class AlgoritmoGenetico {
             novaPopulacao.getIndividuos().clear();
         }
         
-        System.out.println("Melhor indivíduo: " + populacao.getIndividuos().get(0).getVariaveis());
-        System.out.println("Pior indivíduo: " + populacao.getIndividuos().get(99).getVariaveis());
+        //System.out.println(populacao.getIndividuos().get(0).getVariaveis());
+        //System.out.println(populacao.getIndividuos().get(99).getVariaveis());
                 
         return populacao;
     }

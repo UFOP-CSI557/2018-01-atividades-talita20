@@ -6,27 +6,14 @@ import java.util.Collections;
 public class Selecao {
 
     Populacao populacao;
-    Individuo melhor;
-    ArrayList<Individuo> melhorDois_pontos = new ArrayList<>();
-    ArrayList<Individuo> piorDois_pontos = new ArrayList<>();
-    ArrayList<Populacao> populacaoAdd = new ArrayList<>();
-    Individuo pior;
+    Individuo melhorIndividuo;
+    Individuo piorIndividuo;
+    ArrayList<Individuo> melhorInd = new ArrayList<>();
+    ArrayList<Individuo> piorInd = new ArrayList<>();
+    ArrayList<Populacao> populacoes = new ArrayList<>();
 
     public Selecao(Populacao populacao) {
         this.populacao = populacao;
-    }
-
-    public Individuo melhorIndividuo() {
-        return this.populacao.getIndividuos().get(0);
-    }
-
-    public void addPopulacao(Populacao populacao) {
-        populacaoAdd.add(populacao);
-
-    }
-
-    public Individuo piorIndividuo() {
-        return this.populacao.getIndividuos().get(this.populacao.getIndividuos().size());
     }
 
     public Populacao getPopulacao() {
@@ -37,20 +24,32 @@ public class Selecao {
         this.populacao = populacao;
     }
 
-    public Individuo getMelhor() {
-        return melhor;
+    public Individuo getMelhorIndividuo() {
+        return melhorIndividuo;
     }
 
-    public void setMelhor(Individuo melhor) {
-        this.melhor = melhor;
+    public void setMelhorIndividuo(Individuo melhor) {
+        this.melhorIndividuo = melhor;
     }
 
-    public Individuo getPior() {
-        return pior;
+    public Individuo getPiorIndividuo() {
+        return piorIndividuo;
     }
 
-    public void setPior(Individuo pior) {
-        this.pior = pior;
+    public void setPiorIndividuo(Individuo pior) {
+        this.piorIndividuo = pior;
     }
 
+    public Individuo melhorIndividuo() {
+        return this.populacao.getIndividuos().get(0);
+    }
+
+    public Individuo piorIndividuo() {
+        return this.populacao.getIndividuos().get(this.populacao.getIndividuos().size());
+    }
+
+    public void addPopulacao(Populacao populacao) {
+        populacoes.add(populacao);
+    }
+    
 }
