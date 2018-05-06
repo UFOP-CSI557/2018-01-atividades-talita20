@@ -89,10 +89,9 @@ public class AlgoritmoGenetico {
             // Limpa a nova população para a geração seguinte
             novaPopulacao.getIndividuos().clear();
         }
-        
+
         //System.out.println(populacao.getIndividuos().get(0).getVariaveis());
         //System.out.println(populacao.getIndividuos().get(99).getVariaveis());
-                
         return populacao;
     }
 
@@ -135,6 +134,26 @@ public class AlgoritmoGenetico {
                     individuo.getVariaveis().set(i, valor);
                 }
             }
+        }
+    }
+
+    public void resultados(String nomeTeste, int execucao, Double custo, long tempo, int cabecalho) {
+        try {
+            FileWriter saida = new FileWriter("resultados.csv", true);
+            BufferedWriter sai = new BufferedWriter(saida);
+
+            if (execucao == 1 && cabecalho == 1) {
+                saida.write("TESTE;EXECUCAO;CUSTO;TEMPO\n");
+                saida.write(nomeTeste + ";" + execucao + ";" + custo + ";" + tempo + "ms\n");
+            } else {
+                saida.write(nomeTeste + ";" + execucao + ";" + custo + ";" + tempo + "ms\n");
+            }
+
+            saida.flush();
+            saida.close();
+
+        } catch (IOException ex) {
+            System.out.println("Erro ao escrever no arquivo resultados.csv");
         }
     }
 }

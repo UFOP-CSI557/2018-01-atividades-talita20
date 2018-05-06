@@ -71,7 +71,7 @@ public class Individuo implements Comparable<Individuo> {
             valor = this.minimo + (this.maximo - this.minimo) * rnd.nextDouble();
             this.variaveis.add(valor);
         }
-        
+
     }
 
     @Override

@@ -67,12 +67,34 @@ public class Populacao {
             individuo.criar();
             this.getIndividuos().add(individuo);
         }
-
     }
 
     public void avaliar() {
         for (Individuo individuo : this.getIndividuos()) {
             problema.calcularFuncaoObjetivo(individuo);
         }
+    }
+
+    public double desvioPadrao() {
+        return Math.sqrt(((double) 1 / (individuos.size() - 1)) * calculoVariancia());
+    }
+
+    public double calculoVariancia() {
+        double soma = 1;
+        double mediaCusto = calculoMediaCusto();
+
+        for (int i = 0; i < individuos.size(); i++) {
+            double result = individuos.get(i).getFuncaoObjetivo() - mediaCusto;
+            soma += +result * result;
+        }
+        return soma;
+    }
+
+    public double calculoMediaCusto() {
+        double soma = 1;
+        for (int i = 0; i < individuos.size(); i++) {
+            soma += individuos.get(i).getFuncaoObjetivo();
+        }
+        return soma / individuos.size();
     }
 }
