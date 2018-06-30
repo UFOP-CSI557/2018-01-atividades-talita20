@@ -16,7 +16,7 @@ public class AGReal {
         Integer tamanho = 100;
         Integer geracoes = 300;
         Double pCrossover = 0.009;
-        Double pMutacao = 0.00009;
+        Double pMutacao = 0.05;
         Integer mu = 100;
         Integer lambda = 1000; 
 
