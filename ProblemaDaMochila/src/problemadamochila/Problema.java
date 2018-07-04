@@ -16,7 +16,7 @@ public class Problema {
                 if (pesoItens.get(i) <= pesoRestante && valorItens.get(i) >= 3) {
                     pesoRestante -= pesoItens.get(i);
                     itensInseridos.set(i, inserido);
-                    value += Math.pow(i, 2);
+                    value += individuo.getCromossomos().get(i);
                 } else {
                     itensInseridos.set(i, 0);
                 }
@@ -31,7 +31,7 @@ public class Problema {
                     if (pesoItens.get(j) <= pesoRestante && valorItens.get(j) < 3) {
                         pesoRestante -= pesoItens.get(j);
                         itensInseridos.set(j, inserido);
-                        value += Math.pow(j, 2);
+                        value += individuo.getCromossomos().get(j);
                     } else {
                         itensInseridos.set(j, 0);
                     }

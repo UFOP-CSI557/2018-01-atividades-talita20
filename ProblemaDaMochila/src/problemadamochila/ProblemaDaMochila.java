@@ -35,7 +35,7 @@ public class ProblemaDaMochila {
         ArrayList<Double> alg = new ArrayList();
         Double mediaCusto = 0.0;
 
-        for (int i = 1; i <= repeticoes; i++) {            
+        for (int i = 1; i <= repeticoes; i++) {
 
             Individuo ind = new Individuo(geracoes, pesos, pesoMinimo, pesoMaximo, valores, valorMinimo, valorMaximo);
             pesoItens = ind.preeenchePesos(pesos, pesoMinimo, pesoMaximo, geracoes);
@@ -59,8 +59,7 @@ public class ProblemaDaMochila {
 
             //System.out.println(i + "ª Execução" + "\tCusto:" + result + "\tTempo: " + tempoTotal + "ms\n");
             //System.out.flush();
-            
-            ag.resultados(i, result, tempoTotal, cabecalho);                
+            ag.resultados(i, result, tempoTotal, cabecalho);
             cabecalho = -1;
 
             if (i == repeticoes) {
@@ -81,9 +80,9 @@ public class ProblemaDaMochila {
                     }
                 }
 
-                System.out.println("Melhor custo: " + melhorCusto);
-                System.out.println("Pior custo: " + piorCusto);
-                System.out.println("Média dos custos: "+mediaCusto/repeticoes);
+                System.out.println("Custo mais baixo: " + melhorCusto);
+                System.out.println("Custo mais alto: " + piorCusto);
+                System.out.println("Média dos custos: " + mediaCusto / repeticoes);
                 tempos = tempos / repeticoes;
                 System.out.println("Tempo médio de execução: " + tempos + "ms");
 
